@@ -29,7 +29,7 @@ for (let i = Math.random * 13; i <= prisoners.length; i++) { // NEEDS TO ITERATE
             count++
             if (count == 25) {
                 console.log('I raise my hand!')
-                for (let i = 0; i < prisoners.length; i++) { // ITERATES THROUGH ALL 'FIRST' INDEX PROPERTIES TO CHECK IF THEY'RE AT LEAST ONE
+                for (let i = 0; i < prisoners.length; i++) { // NEEDS TO ITERATE THROUGH ALL 'FIRST' INDEX PROPERTIES TO CHECK IF THEY'RE AT LEAST ONE
                     const element = prisoners[i];
                     if (i >= 1) {
                         return console.log("YOU WIN!!!")
