@@ -20,6 +20,11 @@ let switchTwo = Math.random() < 0.5
 let mainCount = 0
 let prisonerCount = 0
 
+function test() {
+    let test = Math.round(Math.random() * 12)
+    console.log(test)
+}
+
 function riddle() {
     console.log("Here we go!");
     for (let i = Math.round(Math.random() * 12); i <= prisoners.length; i = 1 * (Math.round(Math.random() * 12))) {
@@ -32,6 +37,10 @@ function riddle() {
         console.log(switchTwo);
         console.log("First", prisoners[i].first);
         if (i == 0) {
+            if (prisoners[i].first <= 1) {
+                prisoners[i].first++
+                mainCount++
+            }
             if (switchOne == true) {
                 if (switchTwo == true) {
                     switchTwo = false
@@ -42,18 +51,16 @@ function riddle() {
             else {
                 switchOne = true
                 mainCount++
-                if (mainCount == 24) {
+                if (mainCount == 26) {
                     console.log('I raise my hand!')
                     for (let i = 0; i <= prisoners.length; i++) {
-                        if (prisoners[i].first >= 1) {
-                            console.log("Prisoner ", prisoners[i].id, prisoners[i].first);
-                        } else { return }
+                        console.log("Prisoner", prisoners[i].id, prisoners[i].first);
                     }
                 }
             }
         }
         else {
-            if (prisoners[i].first < 2) {
+            if (prisoners[i].first <= 1) {
                 if (switchOne == true) {
                     switchOne = false
                     prisoners[i].first++
