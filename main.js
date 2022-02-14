@@ -1,60 +1,79 @@
-const prisoners = [{ 'id': 'a', 'first': 0 },
-{ 'id': 'b', 'first': 0 },
-{ 'id': 'c', 'first': 0 },
-{ 'id': 'd', 'first': 0 },
-{ 'id': 'e', 'first': 0 },
-{ 'id': 'f', 'first': 0 },
-{ 'id': 'g', 'first': 0 },
-{ 'id': 'h', 'first': 0 },
-{ 'id': 'i', 'first': 0 },
-{ 'id': 'j', 'first': 0 },
-{ 'id': 'k', 'first': 0 },
-{ 'id': 'l', 'first': 0 },
-{ 'id': 'm', 'first': 0 }]
+let prisoners = [
+    { id: 'a', first: 0 },
+    { id: 'b', first: 0 },
+    { id: 'c', first: 0 },
+    { id: 'd', first: 0 },
+    { id: 'e', first: 0 },
+    { id: 'f', first: 0 },
+    { id: 'g', first: 0 },
+    { id: 'h', first: 0 },
+    { id: 'i', first: 0 },
+    { id: 'j', first: 0 },
+    { id: 'k', first: 0 },
+    { id: 'l', first: 0 },
+    { id: 'm', first: 0 }
+]
 
+let switchOne = Math.random() < 0.5
+let switchTwo = Math.random() < 0.5
 
-let switchOne = true // NEED TO RANDOMIZE THESE
-let switchTwo = true // NEED TO RANDOMIZE THESE
+let mainCount = 0
+let prisonerCount = 0
 
-let count = 0
-
-
-for (let i = Math.random * 13; i <= prisoners.length; i++) { // NEEDS TO ITERATE RANDOMLY UNTIL RETURN IS CALLED
-    if (i = 0) {
-        if (switchOne == true) {
-            switchTwo != switchTwo // NEED TO SET THE OPPOSITE
-        }
-        else {
-            switchOne = true
-            count++
-            if (count == 25) {
-                console.log('I raise my hand!')
-                for (let i = 0; i < prisoners.length; i++) { // NEEDS TO ITERATE THROUGH ALL 'FIRST' INDEX PROPERTIES TO CHECK IF THEY'RE AT LEAST ONE
-                    const element = prisoners[i];
-                    if (i >= 1) {
-                        return console.log("YOU WIN!!!")
+function riddle() {
+    console.log("Here we go!");
+    for (let i = Math.round(Math.random() * 12); i <= prisoners.length; i = 1 * (Math.round(Math.random() * 12))) {
+        prisonerCount++
+        console.log("working...");
+        console.log("index ", i);
+        console.log("prisoner count ", prisonerCount);
+        console.log("main count ", mainCount);
+        console.log(switchOne);
+        console.log(switchTwo);
+        console.log("First", prisoners[i].first);
+        if (i == 0) {
+            if (switchOne == true) {
+                if (switchTwo == true) {
+                    switchTwo = false
+                } else {
+                    switchTwo = true
+                }
+            }
+            else {
+                switchOne = true
+                mainCount++
+                if (mainCount == 24) {
+                    console.log('I raise my hand!')
+                    for (let i = 0; i <= prisoners.length; i++) {
+                        if (prisoners[i].first >= 1) {
+                            console.log("Prisoner ", prisoners[i].id, prisoners[i].first);
+                        } else { return }
                     }
-                    else {
-                        return console.log("YOU DIE")
-                    }
-
                 }
             }
         }
-    }
-    else {
-        if (prisoners.first < 2) {
-            if (switchOne == true) {
-                switchOne = false
-                prisoners.first++
+        else {
+            if (prisoners[i].first < 2) {
+                if (switchOne == true) {
+                    switchOne = false
+                    prisoners[i].first++
+                }
+                else {
+                    if (switchTwo == true) {
+                        switchTwo = false
+                    } else {
+                        switchTwo = true
+                    }
+                }
+
             }
             else {
-                switchTwo != switchTwo // NEED TO SET THE OPPOSITE
+                if (switchTwo == true) {
+                    switchTwo = false
+                } else {
+                    switchTwo = true
+                }
             }
-
-        }
-        else {
-            switchTwo != switchTwo // NEED TO SET THE OPPOSITE
         }
     }
 }
