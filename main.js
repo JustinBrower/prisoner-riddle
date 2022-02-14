@@ -17,6 +17,7 @@ let prisoners = [
 let switchOne = Math.random() < 0.5
 let switchTwo = Math.random() < 0.5
 
+let totalCount = 0
 let mainCount = 0
 let prisonerCount = 0
 
@@ -48,9 +49,11 @@ function riddle() {
                 mainCount++
                 if (mainCount == 26) {
                     console.log('I raise my hand!')
-                    for (let i = 0; i <= prisoners.length; i++) {
+                    for (let i = 0; i < prisoners.length; i++) {
                         console.log("Prisoner", prisoners[i].id, prisoners[i].first);
+                        totalCount += prisoners[i].first
                     }
+                    return console.log(totalCount)
                 }
             }
         }
