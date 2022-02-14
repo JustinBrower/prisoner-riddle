@@ -20,11 +20,6 @@ let switchTwo = Math.random() < 0.5
 let mainCount = 0
 let prisonerCount = 0
 
-function test() {
-    let test = Math.round(Math.random() * 12)
-    console.log(test)
-}
-
 function riddle() {
     console.log("Here we go!");
     for (let i = Math.round(Math.random() * 12); i <= prisoners.length; i = 1 * (Math.round(Math.random() * 12))) {
