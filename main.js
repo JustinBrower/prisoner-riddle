@@ -53,7 +53,11 @@ function riddle() {
                         console.log("Prisoner", prisoners[i].id, prisoners[i].first);
                         totalCount += prisoners[i].first
                     }
-                    return console.log(totalCount)
+                    if (totalCount >= 25) {
+                        console.log("You Win!!!!");
+                    } else {
+                        console.log("You Die.");
+                    } return
                 }
             }
         }
