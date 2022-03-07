@@ -51,18 +51,18 @@ function riddle() {
                 if (mainCount == 26) {
                     console.log('I raise my hand!')
                     for (let i = 0; i < prisoners.length; i++) {
-                        console.log("Prisoner", prisoners[i].id, prisoners[i].first);
+                        if (prisoners[i].first < 1) {
+                            result = "You Die."
+                            draw()
+                            return
+                        }
                         totalCount += prisoners[i].first
-                    }
-                    if (totalCount >= 25) {
-                        result = "You Win!!!!"
-                        console.log(result);
                         draw()
-                    } else {
-                        result = "You Die."
-                        console.log(result);
-                        draw()
+                        console.log("Prisoner", prisoners[i].id, prisoners[i].first);
                     }
+                    result = "You Win!!!"
+                    draw()
+                    console.log(result);
                     return
                 }
             }
