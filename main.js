@@ -109,7 +109,4 @@ function reset() {
     draw()
     return
 }
-function check() {
-    console.log(totalCount, mainCount, prisonerCount);
-}
 draw()
