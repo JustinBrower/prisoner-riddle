@@ -85,16 +85,27 @@ function riddle() {
 }
 
 
-
 function draw() {
-    let template = `<div>Prisoners Sent: ${prisonerCount}</div>
+    let riddle = `<div>Prisoners Sent: ${prisonerCount}</div>
                     <div>Leader's Count: ${mainCount}</div>
                     <div>First Time Enters: ${totalCount}</div>
                     <div>Results: ${result}</div>`
     let button = '<div><button onclick="riddle()">Riddle</button></div> <div><button onclick="reset()">Reset</button></div>'
-    document.getElementById('riddle').innerHTML = template
+    let tableTemplate = ''
+
+    for (let i = 0; i < prisoners.length; i++) {
+        tableTemplate += `<li>Prisoners: ${prisoners[i].id} | First: ${prisoners[i].first}</li>`
+    }
+
+    document.getElementById('table-template').innerHTML = tableTemplate
+    document.getElementById('riddle').innerHTML = riddle
     document.getElementById('button').innerHTML = button
 }
+
+
+
+
+
 function reset() {
     for (let i = 0; i < prisoners.length; i++) {
         prisoners[i].first = 0
