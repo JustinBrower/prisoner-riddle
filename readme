@@ -1,0 +1,53 @@
+This is an answer to "the 13 prisoner riddle" which is listed below:
+
+
+The warden gathers 13 prisoners who are on death row. He tells them all that they will be executed unless they can solve this riddle.
+
+One by one they will be sent to a separate room that contains two switches, which can be turned on or off. There is nothing connected to these switches.
+Any prisoner who enters is able to see if either switch is on or off when they enter the room.
+
+When a prisoner gets called from their cell they will enter the room, flip exactly one switch one time, and head back to their cell.
+They may not have contact with any of the other prisoners before, during, or after.
+
+The warden may call any prisoner, in any order, any number of times, for as long as he wants, but he WILL call every prisoner in to flip a switch at some point.
+
+At some point during this, one prisoner must raise their hand and claim that he or she knows for a fact that all of the prisoners have been in the room.
+
+If they are correct, all prisoners may live.
+If wrong, they will die.
+The prisoners get one hour to devise a plan.
+
+How do they do it?
+
+ADDITIONAL NOTES:
+-No marks, scratches, or any other form of communication outside of flipping the switches is permitted.
+-The switches are not connected to anything.
+-Switches are in an ON/OFF position
+-Time doesn't matter for this riddle, the warden could call the same prisoner a million times in a row if desired, then call another prisoner, then go BACK to the first.
+
+Answer in words below, proof of the answer is running the code.
+
+
+!SPOILERS!
+
+
+First the prisoners will choose a leader. That leader will be the "counter" who will keep track of who all has been in the room.
+
+The prisoners have two rules.
+
+1: The leader will flip the first switch OFF whenever he enters and count up one. If unable, he will flip the second switch and not count.
+2: The other prisoners will, on their FIRST entrance, flip the first switch ON if able. if unable, or if not on first entrance, they will flip the second switch.
+
+When the leader counts to 13 he will know everyone has been in the room and raise his hand.
+
+BUT! There is a chance that the first switch started in the ON position, meaning that there will be an extra count where no one had entered, meaning failure.
+To insure this doesn't happen, the prisoners will do two iterations.
+Meaning instead of everyone flipping the first switch on the first time, they will do first AND second.
+
+Meaning the leader will actually raise their hand on the number 25. 13(for all the prisoners) + 12(all the prisoners again BUT the leader) will insure everyone has entered.
+
+To prove this method works, I've set up the parameters and a check in the code. Feel free to run it and try it yourself!
+And if there is another way to make this work please feel free to tell me!
+
+
+
